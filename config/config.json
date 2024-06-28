@@ -1,0 +1,26 @@
+{
+  "development": {
+    "username": "root",
+    "password": "tng1523@",
+    "database": "BLOODDONODB",
+    "host": "46.137.230.178",
+    "port": 3306,
+    "dialect": "mysql"
+  },
+  "test": {
+    "username": "root",
+    "password": "tng1523@",
+    "database": "BLOODDONODB",
+    "host": "46.137.230.178",
+    "port": 3306,
+    "dialect": "mysql"
+  },
+  "production": {
+    "username": "root",
+    "password": "tng1523@",
+    "database": "BLOODDONODB",
+    "host": "46.137.230.178",
+    "port": 3306,
+    "dialect": "mysql"
+  }
+}

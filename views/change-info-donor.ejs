@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/change-donor.css" />
+    <link rel="icon" href="/assets/img/logo-pic.png" type="image/x-icon" />
+    <link rel="stylesheet" href="/assets/font/fontawesome-free-6.2.1-web/fontawesome-free-6.2.1-web/css/all.css" />
+    <link rel="stylesheet" href="/assets/bootstrap/bootstrap-4.6.2-dist/css/bootstrap.css" />
+    <title>BloodDono-Thay đổi thông tin</title>
+</head>
+
+<body>
+    <div id="header">
+        <div class="container-fluid">
+            <div class="row">
+                <a href="/" class="logo">
+                    <div class="logo-pic line">
+                        <img src="/assets/img/logo-pic.png" alt="" />
+                    </div>
+                    <div class="logo-name line">BloodDono</div>
+                </a>
+
+                <div class="log-in-out">
+                    <a href="/logout" class="login line"><i class="fa-solid fa-right-from-bracket"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="content">
+        <div class="container d-flex justify-content-center">
+            <div class="row donor-box d-flex justify-content-around">
+                <div class="col-3">
+                    <!-- Hình ảnh và tên user -->
+                    <div class="user-interface">
+                        <img src="/assets/img/help.png" alt="" class="user-avt" />
+                        <div class="user-name">-</div>
+                        <div class="edit-tag">
+                            <i class="fa-regular fa-pen-to-square"></i> Chỉnh sửa
+                        </div>
+                    </div>
+                    <!-- ------------------------------------- -->
+
+                    <!-- Các chức năng -->
+                    <div class="confirm-btn">
+                        <button class="btn confirm">Thay đổi</button>
+                        <button class="btn back">Trở về</button>
+                    </div>
+                    <!-- ------------------------------------- -->
+                </div>
+
+                <div class="col-8">
+                    <!-- Thông tin cá nhân -->
+                    <div class="basic info">
+                        <div class="row">
+                            <div class="frame">
+                                <label for="">Họ và tên</label> <br />
+                                <input type="text" name="name" id="name" value="" required />
+                            </div>
+                            <div class="frame">
+                                <label for="">Ngày sinh</label> <br />
+                                <input type="date" name="" id="birth" value="" required />
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="frame">
+                                <label for="">Số điện thoại</label> <br />
+                                <input type="tel" name="" id="phoneNumber" value="" required />
+                            </div>
+                            <div class="frame">
+                                <label for="">Email cá nhân</label> <br />
+                                <input type="email" name="" id="email" value="" required />
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="frame">
+                                <label for="">Địa chỉ</label> <br />
+                                <input type="text" name="" id="street" value="" class="input-adr record"
+                                    placeholder="Số nhà, tên đường" required />
+                            </div>
+                        </div>
+                        <div class="row combobox">
+                            <select name="" class="" id="ward"></select>
+                            <select name="" class="" id="district"></select>
+                            <select name="" class="" id="province"></select>
+                        </div>
+                    </div>
+                    <!-- ---------------------------------------- -->
+
+                    <!-- Thông tin sức khỏe -->
+
+                    <div class="health info">
+                        <div class="row">
+                            <div class="frame">
+                                <label for="">Chiều cao (cm)</label> <br />
+                                <input type="number" name="" id="height" required />
+                            </div>
+                            <div class="frame">
+                                <label for="">Cân nặng (kg)</label> <br />
+                                <input type="number" name="" id="weight" required />
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="frame">
+                                <label for="">Giới tính</label> <br />
+                                <!-- <input type="text" name="" id="gender" /> -->
+                                <select class="blood-type" id="gender" name="gender" required>
+                                    <option value="1">Nam</option>
+                                    <option value="0">Nữ</option>
+                                </select>
+                            </div>
+                            <div class="frame">
+                                <label for="">Nhóm máu</label> <br />
+                                <select class="blood-type" id="bloodType" name="blood-type" required>
+                                    <option value="" selected disabled hidden>Chọn nhóm máu</option>
+                                    <optgroup label="Nhóm máu A">
+                                        <option value="A+">A+</option>
+                                        <option value="A-">A-</option>
+                                    </optgroup>
+                                    <optgroup label="Nhóm máu B">
+                                        <option value="B+">B+</option>
+                                        <option value="B-">B-</option>
+                                    </optgroup>
+                                    <optgroup label="Nhóm máu AB">
+                                        <option value="AB+">AB+</option>
+                                        <option value="AB-">AB-</option>
+                                    </optgroup>
+                                    <optgroup label="Nhóm máu O">
+                                        <option value="O+">O+</option>
+                                        <option value="O-">O-</option>
+                                    </optgroup>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="frame">
+                                <label for="">Lịch sử bệnh án</label> <br />
+                                <select class="record med-history" id="illness" placeholder="Tiền sử bệnh án">
+                                </select>
+                                <div id="medical" class="flex-around"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- ---------------------------------------- -->
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<!-- get data for address -->
+<script>
+    const province = document.getElementById("province");
+    const district = document.getElementById("district");
+    const ward = document.getElementById("ward");
+    const street = document.getElementById("street");
+    province.addEventListener("change", (e) => {
+        const province_id = e.target.value;
+        axios
+            .get(`http://localhost:3000/api/address/district/${province_id}`)
+            .then((response) => {
+                // handle success
+                const data = response.data;
+                district.innerHTML = `<option value="default" selected disabled hidden>Chọn huyện/phường</option>`;
+                ward.innerHTML = `<option value="default" selected disabled hidden>Chọn xã</option>`;
+                data.forEach((element) => {
+                    district.innerHTML += `<option value="${element.District_id}">${element.Name}</option>`;
+                });
+            })
+            .catch((error) => {
+                // handle error
+                console.log(error);
+            });
+    });
+    district.addEventListener("change", (e) => {
+        const district_id = e.target.value;
+        axios
+            .get(`http://localhost:3000/api/address/ward/${district_id}`)
+            .then((response) => {
+                // handle success
+                const data = response.data;
+                ward.innerHTML = `<option value="default" selected disabled hidden>Chọn xã</option>`;
+                data.forEach((element) => {
+                    ward.innerHTML += `<option value="${element.Wards_id}">${element.Name}</option>`;
+                });
+            })
+            .catch((error) => {
+                // handle error
+                console.log(error);
+            });
+    });
+    // show info
+    const username = "<%= username %>";
+    let userData;
+    let selectedIllnessList = [];
+    axios
+        .get(`http://localhost:3000/api/user/${username}`)
+        .then(function (response) {
+            // handle success
+            userData = response.data.data;
+            const name = document.getElementById("name");
+            name.value = userData.name;
+            const birth = document.getElementById("birth");
+            birth.value = userData.birth;
+            const phoneNumber = document.getElementById("phoneNumber");
+            phoneNumber.value = userData.phoneNumber;
+            const email = document.getElementById("email");
+            email.value = userData.email;
+            street.value = userData.address.street ? userData.address.street : "";
+            const height = document.getElementById("height");
+            height.value = userData.height;
+            const weight = document.getElementById("weight");
+            weight.value = userData.weight;
+            const gender = document.getElementById("gender");
+            // gender.value = userData.gender ? "Nam" : "Nữ";
+            if (gender.options[0].text == (userData.gender ? "Nam" : "Nữ")) {
+                gender.selectedIndex = 0;
+            }
+            else {
+                gender.selectedIndex = 1;
+            }
+            const bloodType = document.getElementById("bloodType");
+            //set selected blood type
+            for (let i = 0; i < bloodType.options.length; i++) {
+                if (bloodType.options[i].text == userData.bloodType) {
+                    bloodType.selectedIndex = i;
+                    break;
+                }
+            }
+            axios
+                .get("http://localhost:3000/api/address/province")
+                .then((response) => {
+                    // handle success
+                    const data = response.data;
+                    data.forEach((element) => {
+                        province.innerHTML += `<option value="${element.Province_id}">${element.Name}</option>`;
+                    });
+                    let province_id;
+                    for (let i = 0; i < province.options.length; i++) {
+                        if (province.options[i].text == userData.address.province) {
+                            province_id = province.options[i].value;
+                            province.selectedIndex = i;
+                            break;
+                        }
+                    }
+                    //get selected province value
+                    axios
+                        .get(`http://localhost:3000/api/address/district/${province_id}`)
+                        .then((response) => {
+                            // handle success
+                            const data = response.data;
+                            data.forEach((element) => {
+                                district.innerHTML += `<option value="${element.District_id}">${element.Name}</option>`;
+                            });
+                            let district_id;
+                            for (let i = 0; i < district.options.length; i++) {
+                                if (district.options[i].text == userData.address.district) {
+                                    district_id = district.options[i].value;
+                                    district.selectedIndex = i;
+                                    break;
+                                }
+                            }
+                            axios
+                                .get(`http://localhost:3000/api/address/ward/${district_id}`)
+                                .then((response) => {
+                                    // handle success
+                                    const data = response.data;
+                                    data.forEach((element) => {
+                                        ward.innerHTML += `<option value="${element.Wards_id}">${element.Name}</option>`;
+                                    });
+                                    for (let i = 0; i < ward.options.length; i++) {
+                                        if (ward.options[i].text == userData.address.ward) {
+                                            ward.selectedIndex = i;
+                                            break;
+                                        }
+                                    }
+                                })
+                                .catch((error) => {
+                                    // handle error
+                                    console.log(error);
+                                });
+                        })
+                        .catch((error) => {
+                            // handle error
+                            console.log(error);
+                        });
+                })
+                .catch((error) => {
+                    // handle error
+                    console.log(error);
+                });
+            // get medical history
+            //add illness
+            const medical = document.getElementById("medical");
+            const illnessList = document.getElementById("illness");
+            axios.get("http://localhost:3000/api/illness")
+                .then((response) => {
+                    // handle success
+                    let data = response.data.data;
+                    let optionList = '<option value="" selected disabled hidden>Chọn bệnh án</option>'
+                    data.forEach(element => {
+                        optionList += `<option value="${element.IllnessID}">${element.IllnessName}</option>`
+                    });
+                    illnessList.innerHTML = optionList;
+                })
+                .catch((error) => {
+                    // handle error
+                    console.log(error);
+                });
+            illnessList.addEventListener("change", (event) => {
+                const illnessName = event.target.options[event.target.selectedIndex].text
+                const illnessID = event.target.value;
+                medical.innerHTML += `<div class="sick-tag" title="${illnessName}">${illnessName}</div>`;
+                selectedIllnessList.push(illnessID);
+            });
+        })
+        .catch(function (error) {
+            // handle error
+            console.log(error);
+        });
+    //set avatar
+    axios.get(`http://localhost:3000/api//get-avatar/${username}`)
+        .then(res => {
+            const data = res.data.data;
+            document.querySelector('.user-avt').src = data.photo;
+            document.querySelector('.user-name').innerHTML = data.name;
+        })
+        .catch((error) => {
+            // handle error
+            console.log(error);
+        });
+    // update info
+    const confirmBtn = document.querySelector(".confirm");
+    const backBtn = document.querySelector(".back");
+    confirmBtn.addEventListener("click", (e) => {
+        e.preventDefault();
+        const name = document.getElementById('name').value;
+        const male = document.getElementById('gender');
+        let gender = 0;
+        if (male.options[male.selectedIndex].text == "Nam")
+            gender = 1;
+        const birth = document.getElementById('birth').value;
+        const height = parseInt(document.getElementById('height').value);
+        const weight = parseFloat(document.getElementById('weight').value);
+        const bloodType = document.getElementById('bloodType').value;
+        const phoneNumber = document.getElementById('phoneNumber').value;
+        const email = document.getElementById('email').value;
+        const province = parseInt(document.getElementById('province').value);
+        const district = parseInt(document.getElementById('district').value);
+        const ward = parseInt(document.getElementById('ward').value);
+        const street = document.getElementById('street').value;
+
+        //validate
+        //check name, email length not > 255
+        if (name.length > 255) {
+            alert('Tên không được quá 255 ký tự');
+            return;
+        }
+        if (/^[^0-9!"#$%&()*+,-./:;<=>?@^_`[{|}~]*$/.test(name) == false) {
+            alert('Tên chỉ chứa chữ cái');
+            return;
+        }
+        if (email.length > 255) {
+            alert('Email không được quá 255 ký tự');
+            return;
+        }
+        if (/^[A-Za-z][\w$.]+@[\w]+\.\w+$/.test(email) == false) {
+            alert('Email không hợp lệ');
+            return;
+        }
+        //check phone number is only 10 or 11 digits
+        if (/^\d+$/.test(phoneNumber) == false) {
+            alert('Số điện thoại chỉ chứa số');
+            return;
+        }
+        if (!(phoneNumber.length == 10 || phoneNumber.length == 11)) {
+            alert('Số điện thoại phải có 10 hoặc 11 số');
+            return;
+        }
+        //check phone number is start with 0
+        if (phoneNumber[0] != '0') {
+            alert('Số điện thoại phải bắt đầu bằng số 0');
+            return;
+        }
+        //check height and weight contain letters
+        if (/^\d+$/.test(document.getElementById('height').value) == false || /^\d+$/.test(document.getElementById('weight').value) == false) {
+            alert('Chiều cao và cân nặng phải là số');
+            return;
+        }
+        //check height and weight
+        if (height < 100 || height > 300) {
+            alert('Chiều cao không hợp lệ');
+            return;
+        }
+        if (weight < 20 || weight > 300) {
+            alert('Cân nặng không hợp lệ');
+            return;
+        }
+        //check street length not > 255
+        if (street.length > 255) {
+            alert('Tên đường không được quá 255 ký tự');
+            return;
+        }
+        //check address
+        if (!province || !district || !ward) {
+            alert('Vui lòng chọn đầy đủ địa chỉ');
+            return;
+        }
+        //check age is >= 18 
+        const today = new Date();
+        const birthDate = new Date(birth);
+        let age = today.getFullYear() - birthDate.getFullYear();
+        const month = today.getMonth() - birthDate.getMonth();
+        if (month < 0 || (month === 0 && today.getDate() < birthDate.getDate())) {
+            age--;
+        }
+        if (age < 18) {
+            alert('Bạn chưa đủ 18 tuổi, vui lòng đăng kí khi đã đủ tuổi');
+            return;
+        }
+        if (age > 60) {
+            alert('Bạn đã lớn hơn 60 tuổi, đã vượt quá tuổi quy định để hiến máu');
+            return;
+        }
+
+        const address = {
+            street,
+            ward,
+            district,
+            province
+        }
+        const data = {
+            name,
+            gender,
+            birth,
+            height,
+            weight,
+            bloodType,
+            address,
+            phoneNumber,
+            email,
+            selectedIllnessList
+        }
+        axios.post(`http://localhost:3000/user/${username}/update-profile`, data)
+            .then((response) => {
+                // handle success
+                alert('Cập nhật thành công');
+                window.location.href = `http://localhost:3000/user/${username}`;
+            })
+            .catch((error) => {
+                // handle error
+                console.log(error);
+                alert('Cập nhật thất bại');
+            });
+
+    });
+    backBtn.addEventListener("click", () => {
+        window.location.href = `http://localhost:3000/user/${username}`;
+    });
+</script>
+
+</html>

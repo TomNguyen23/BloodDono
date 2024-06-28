@@ -1,0 +1,196 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-family: Helvetica, Arial, sans-serif;
+    scroll-behavior: smooth;
+    background-color: rgb(207, 245, 231);
+}
+
+body {
+    background-color: rgb(207, 245, 231);
+}
+
+
+/* -------------------Header------------------- */
+#header .container-fluid {
+    background-color: rgba(89, 193, 189, 0.5);
+    border-bottom: 1px solid rgb(89, 92, 94);;
+    height: 46px;
+}
+
+#header .row {
+    justify-content: space-between;
+}
+
+#header .line {
+    display: inline-block;
+}
+
+.logo-pic img {
+    width: 46px;
+    height: 46px;
+    padding: 5px 5px;
+}
+
+.logo-name {
+    font-size: 16px;
+    color: black;
+    line-height: 46px;
+    font-weight: 900;
+}
+
+.log-in-out .fa-solid {
+    color: black;
+    font-size:25px;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.log-in-out .fa-solid:hover {
+    color: rgb(113, 114, 114);
+}
+/* -------------------------------------- */
+
+#content {
+    background-color: rgb(207, 245, 231);
+}
+
+#content .donor-box {
+    width: 90%;
+    height: 100%;
+    padding: 40px 0;
+    background: rgb(2,0,36);
+    background: rgb(160, 228, 203);
+}
+
+
+.donor-box .col-3 .user-interface {
+    padding: 25px 0;
+    text-align: center;
+}
+
+.donor-box .col-3 .user-interface .user-avt {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.donor-box .col-3 .user-interface .user-name {
+    font-size: 16px;
+    font-weight: 650;
+    margin-top: 10px;
+}
+
+.donor-box .col-3 .user-interface .edit-tag {
+    margin-top: 30px;
+    font-size: 20px;
+    font-weight: 600;
+    color: rgb(83, 137, 231);
+}
+
+.donor-box .col-3 .confirm-btn {
+    margin-top: 85px;
+    text-align: center;
+}
+
+.donor-box .col-3 .btn {
+    margin-bottom: 40px;
+    width: 170px;
+    height: 50px;
+    border-radius: 10px;
+    border: none;
+    background-color: rgb(83, 137, 231);
+    color: white;
+    font-size: 17px;
+    font-weight: 600;
+    transition: background 0.3s;
+}
+
+.donor-box .col-3 .btn:hover {
+    color: rgb(83, 137, 231, 0.8);
+    background-color: white;
+}
+
+.confirm-btn .cancel {
+    background-color: rgb(124, 124, 124) !important;
+}
+
+.confirm-btn .cancel:hover {
+    background-color: rgb(175, 174, 174) !important;
+    color: white !important;
+}
+
+.donor-box .col-8 {
+    padding: 10px;
+}
+
+
+.donor-box .col-8 .info {
+    margin: 0 20px;
+}
+
+.donor-box .col-8 .basic {
+    padding-bottom: 15px;
+    border-bottom: 2px solid rgb(13, 76, 146);
+}
+
+.col-8 .info .frame {
+    margin: 10px 30px;
+}
+
+.col-8 .info .frame input,.blood-type {
+    width: 250px;
+    height: 40px;
+    border: 1px solid rgba(0, 84, 76, 0.63);
+    border-radius: 5px;
+    padding-left: 5px;
+}
+
+.combobox{
+    margin-left: 18px !important;
+}
+
+select {
+    margin-right: 8px !important;
+    width: 180px;
+    height: 40px;
+    border: 1px solid rgba(0, 84, 76, 0.63);
+    border-radius: 5px;
+}
+
+.col-8 .info .frame .record {
+    width: 560px;
+}
+
+.col-8 .info label {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.sick-tag {
+	background-color: #f6f5f7;
+	border-radius: 20px !important;
+	border: none;
+	color: black;
+	font-size: 17px;
+	font-weight: 550;
+	margin: 10px 10px 10px 0;
+	padding: 5px;
+	width: 30%;
+    height: fit-content;
+    text-align: center;
+    cursor: pointer;
+}
+
+.flex-around {
+	display: flex;
+	justify-content: start;
+    align-items: center;
+	flex-wrap: wrap;
+}

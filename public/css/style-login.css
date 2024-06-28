@@ -1,0 +1,454 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-family: Helvetica, Arial, sans-serif;
+    scroll-behavior: smooth;
+}
+
+.flex {
+    display: flex !important;
+}
+
+.label {
+    margin-right: 5px;
+}
+
+#event-panel li {
+    list-style-type: none !important;
+}
+
+a {
+    text-decoration: none !important;
+}
+
+#header .container-fluid {
+    background-color: rgba(89, 193, 189, 0.5);
+    border-bottom: 1px solid rgb(89, 92, 94);;
+    height: 46px;
+}
+
+#header .row {
+    justify-content: space-between;
+}
+
+#header .line {
+    display: inline-block;
+}
+
+.logo-pic img {
+    width: 46px;
+    height: 46px;
+    padding: 5px 5px;
+}
+
+.logo-name {
+    font-size: 16px;
+    color: black;
+    line-height: 46px;
+    font-weight: 900;
+}
+
+.userInfo .username {
+    padding: 10px 0;
+}
+
+.userInfo .line {
+    padding: 10px 20px;
+    font-weight: 500;
+    text-decoration: none;
+    color: white;
+    transition: background 0.3s;
+}
+
+.userInfo .line:hover {
+    background-color: white;
+    color: rgb(89, 193, 189);
+}
+
+#slider .row {
+    padding-top: 50%;
+    background:  url(/assets/img/mainBackground.png) top center/cover no-repeat;
+    justify-content: center;
+    align-items: center;
+}
+
+#slider img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: relative;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+#slider .box {
+    position: absolute;
+    background-color: rgba(59, 101, 97, 0.4);
+    color: white;
+    width: 600px;
+    border-radius: 40px;
+    padding: 15px;
+    text-align: center;
+    top: 40%;
+    left: 30%;
+}
+
+.box .boxHeading {
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+.box .line {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: rgba(89, 193, 189, 0.85);
+    border-radius: 50px;
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+    transition: background 0.3s;
+}
+
+.box .line:hover {
+    background-color: white;
+    color: rgb(89, 193, 189);
+}
+
+.box .blood-register {
+    width: 214px;
+    margin-right: 40px;
+}
+
+.box .blood-need {
+    margin-left: 40px;
+}
+
+#event-panel {
+    background-color: rgb(207, 245, 231);
+    padding: 70px 0;
+    display: flex;
+    align-items: center;
+}
+
+#event-panel .lastest-events h1 {
+    font-size: 60px;
+    font-weight: 700;
+    margin: 40px 200px;
+}
+
+#event-panel .lastest-events .event {
+    background-color: rgba(0, 84, 76, 0.14);
+    width: 1080px;
+    padding: 20px;
+    margin: 20px 0 20px 210px;
+    border-radius: 20px;
+    transition: background 0.3s;
+}
+
+#event-panel .lastest-events .event:hover {
+    background-color: rgba(0, 84, 76, 0.3);
+}
+
+.grey-background {
+    background-color: rgb(207, 245, 231);
+}
+
+#content .about-pic img {
+    width: 100%;
+    height: 60%;
+    margin: 170px 0;
+}
+
+#content .about-content {
+    margin: 170px 0;
+}
+
+.about-content .about-heading {
+    font-size: 60px;
+    font-weight: 700;
+    margin: 40px;
+}
+
+.about-content .about-description {
+    font-size: 20px;
+    font-weight: 500;
+    margin: 30px;
+    text-align: justify;
+}
+
+.choice-panel {
+    background-color: rgba(89, 193, 189, 0.5);
+    padding: 0 0 20px 0;
+    margin: 170px 0;
+    flex-basis: 30%;
+    border-radius: 20px;
+}
+
+.choice-panel img {
+    width: 100%;
+    height: 41.63%;
+    margin: 10px 0;
+}
+
+.choice-panel h3 {
+    text-align: center;
+    margin: 10px 0 2px 0;
+    font-weight: 700;
+}
+
+.choice-panel p {
+    text-align: justify;
+    margin: 10px 10px 70px 10px;
+    font-weight: 500;
+}
+
+.choice-panel .btn {
+    display: block;
+    text-align: center;
+    padding: 5px 40px;
+    margin: 50px 50px 5px 50px;
+    background-color: rgb(13, 76, 146);
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 20px;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.choice-panel .btn:hover {
+    background-color: white;
+    color: rgb(13, 76, 146);
+}
+
+#footer {
+    background-color: rgb(89, 193, 189);
+}
+
+.margin {
+    margin: 40px 0;
+}
+
+#footer .line {
+    display: inline;
+}
+
+#footer .logo {
+    margin: 40px 0;
+    text-align: center;
+}
+
+#footer .logo-pic {
+    line-height: 136px;
+}
+
+.combo a {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 40px;
+    color: black;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.combo a:hover {
+    color: rgb(100, 96, 96);
+}
+
+/* modal */
+.Modal {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+    display: none;  
+    align-items: center;
+    justify-content: center;
+}
+
+.Modal.open {
+    display: flex;
+}   
+
+.Modal .Modal-container {
+    background-color: white;
+    width: 620px;
+    max-width: calc(100% - 40px);
+    min-height: 342.5px;
+    max-height: 600px;
+    position: relative;
+    border-radius: 10px;
+    animation: fadeIn ease 0.5s;
+    overflow-y: auto;
+}
+
+
+.Modal .Modal-container::-webkit-scrollbar {
+    width: 8px;
+}
+
+.Modal .Modal-container::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 15px;
+}
+
+.Modal .Modal-container::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 10px;
+}
+
+.Modal .Modal-container .close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 18px;
+    font-size: 25px;
+    cursor: pointer;
+    color: rgb(221, 220, 220);
+    transition: color 0.3s;
+}
+
+.Modal .Modal-container .close:hover {
+    color: red;
+}
+
+.Modal .Modal-container .Modal-header {
+    margin: 20px 370px 20px 20px;
+    padding: 10px 0;
+    border-bottom: 2px solid #eaeaea;
+    border-radius: 20px 20px 0 0;
+    text-align: left;
+    font-weight: 700;
+    color: black;
+}
+
+.Modal .Modal-container .Modal-content {
+    padding: 10px 20px;
+}
+
+.Modal .Modal-container .Modal-content textarea {
+    width: 100%;
+    height: 150px;
+    border: 1px solid #d8d8d8;
+    border-radius: 5px;
+    padding: 10px;
+    resize: none;
+    outline: none;
+}
+
+.Modal .Modal-container .btn-send-feedback {
+    display: block;
+    float: right;
+    margin: 10px 20px 10px 0;
+    padding: 5px 20px;
+    background-color: rgb(13, 76, 146);
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 17px;
+    border: none;
+    border-radius: 50px;
+    transition: background 0.3s;
+}
+
+.Modal .Modal-container .btn-send-feedback:hover {
+    color: white;
+    background-color: rgb(10, 54, 104);
+}
+
+.benefit-Modal-header,.condition-Modal-header {
+    padding: 20px;
+    border-radius: 10px 10px 0 0;
+    font-weight: 700;
+    color: black;
+}
+
+.benefit-Modal-content,.condition-Modal-content {
+    padding: 20px;
+    font-size: 17px;
+    text-align: justify;
+}
+
+.benefit-Modal-content ul {
+    margin-left: 20px;
+}
+
+.condition-Modal-content li {
+    list-style: none;
+}
+
+.Modal .Modal-condition-container {
+    background-color: white;
+    width: 800px;
+    max-width: calc(100% - 40px);
+    min-height: 342.5px;
+    max-height: 550px;
+    position: relative;
+    border-radius: 10px;
+    animation: fadeIn ease 0.5s;
+    overflow-y: auto;
+}
+
+.Modal .Modal-condition-container::-webkit-scrollbar {
+    width: 8px;
+}
+
+.Modal .Modal-condition-container::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 15px;
+}
+
+.Modal .Modal-condition-container::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 10px;
+}
+
+.Modal .Modal-condition-container .close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 18px;
+    font-size: 25px;
+    cursor: pointer;
+    color: rgb(221, 220, 220);
+    transition: color 0.3s;
+}
+
+.Modal .Modal-condition-container .close:hover {
+    color: red;
+}
+
+.Modal .Modal-condition-container .result-btn {
+    padding: 8px 20px;
+    border-radius: 10px;
+    border: none;
+    text-align: center;
+    font-weight: 700;
+    color: white;
+    background-color: rgb(13, 76, 146);
+    transition: background 0.3s;
+}
+
+.Modal .Modal-condition-container .result-btn:hover {
+    color: #f6f5f7;
+    background-color: rgb(10, 60, 117);
+}
+
+@keyframes fadeIn {
+    from {
+        transform: translateY(200px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
